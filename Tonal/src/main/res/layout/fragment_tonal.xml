@@ -11,10 +11,23 @@
     <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DTMF Dialer Enabled"
             android:id="@+id/enabled"
+            android:checked="false"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
+            android:button="@drawable/enable_disable_button"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/enabled_text"
+            android:text="@string/dtmf_disabled"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/enabled"
+            android:layout_alignBottom="@id/enabled"
+            android:layout_alignTop="@id/enabled"
+/>
 
     <TextView
             android:layout_width="wrap_content"

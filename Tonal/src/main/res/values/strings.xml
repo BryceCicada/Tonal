@@ -4,5 +4,7 @@
     <string name="app_name">Tonal</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="dtmf_enabled">Outbound non-emergency calls are blocked. Instead, DTMF tones will be heard. These tones can dial other phones. </string>
+    <string name="dtmf_disabled">All outbound calls will connect as normal. Enable to hear DTMF tones instead.</string>
 
 </resources>

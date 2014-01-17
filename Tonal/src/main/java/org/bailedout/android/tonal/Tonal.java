@@ -69,15 +69,19 @@ public class Tonal extends ActionBarActivity {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       final View view = inflater.inflate(R.layout.fragment_tonal, container, false);
-      final CheckBox cb = (CheckBox) view.findViewById(R.id.enabled);
 
       final SharedPreferences sp = inflater.getContext().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
 
+      final CheckBox cb = (CheckBox) view.findViewById(R.id.enabled);
+      final TextView tv = (TextView) view.findViewById(R.id.enabled_text);
+
       cb.setChecked(sp.getBoolean("enabled", true));
+      tv.setText(cb.isChecked() ? R.string.dtmf_enabled : R.string.dtmf_disabled);
       cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
           sp.edit().putBoolean("enabled", isChecked).commit();
+          tv.setText(isChecked ? R.string.dtmf_enabled : R.string.dtmf_disabled);
         }
       });
 
